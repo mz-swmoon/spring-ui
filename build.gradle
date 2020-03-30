@@ -4,9 +4,14 @@ plugins {
 	id 'java'
 }
 
-group = 'com.example'
-version = '0.0.1-SNAPSHOT'
+group = 'spring'
 sourceCompatibility = '1.8'
+
+
+
+jar {
+	baseName = 'spring-ui'
+}
 
 repositories {
 	mavenCentral()
@@ -22,14 +27,10 @@ dependencies {
 	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
 
 
-	implementation "org.springframework.security:spring-security-taglibs"
-	implementation "javax.servlet:jstl"
-	implementation 'org.springframework.cloud:spring-cloud-starter-config'
-
-	implementation "org.springframework.boot:spring-boot-starter-aop"
+	implementation('org.springframework.cloud:spring-cloud-starter-config')
+	implementation('org.springframework.boot:spring-boot-starter-actuator')
 	implementation "javax.servlet:jstl"
 
-	testCompile "org.springframework.boot:spring-boot-starter-test"
 
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
